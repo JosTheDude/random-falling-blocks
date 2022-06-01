@@ -10,24 +10,7 @@ commands:
   blocks:
     usage: /blocks
     description: RandomBlock's Main Command
-  blocks start:
-    description: Start blocks!
-    permission: blocks.start
-    permission-message: You can't use this!
-  blocks stop:
-    description: Stops blocks!
-    permission: blocks.stop
-    permission-message: You can't use this!
 permissions:
   blocks.*:
-    children:
-      blocks.start: true
-      blocks.stop: true
     description: Grants you all permissions for Blocks
-    default: false
-  blocks.start:
-    description: Start blocks
-    default: false
-  blocks.stop:
-    description: Stops blocks
-    default: false
+    default: op
