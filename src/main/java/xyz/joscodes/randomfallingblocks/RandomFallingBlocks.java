@@ -35,7 +35,7 @@ public class RandomFallingBlocks extends JavaPlugin implements Listener {
 
 	@Override
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-		if (sender.hasPermission("blocks. *")) {
+		if (sender.hasPermission("blocks.*")) {
 			if (((args.length == 2 || args.length == 1) && label.equalsIgnoreCase("blocks")) || label.equalsIgnoreCase("randomfallingblocks:blocks")) {
 				if (args[0].equalsIgnoreCase("start") && args.length == 2) {
 					if (!this.isStarted) {
@@ -80,6 +80,8 @@ public class RandomFallingBlocks extends JavaPlugin implements Listener {
 			}
 			return true;
 		}
+		sender.sendMessage(ChatColor.RED + "You cannot use this command!");
+		sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 		return true;
 	}
 
