@@ -44,6 +44,7 @@ public class RandomFallingBlocks extends JavaPlugin implements Listener {
 							rate = Integer.valueOf(args[1]);
 						} catch (final NumberFormatException exc) {
 							sender.sendMessage(ChatColor.RED + "Invalid number!");
+							sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 						}
 						if (rate.intValue() != 0) {
 							this.isStarted = true;
@@ -55,9 +56,11 @@ public class RandomFallingBlocks extends JavaPlugin implements Listener {
 								}
 							}, (20 / rate.intValue()), (20 / rate.intValue())));
 							sender.sendMessage(ChatColor.GREEN + "Random Falling Blocks started with a rate of " + ChatColor.GOLD + ChatColor.BOLD + rate + ChatColor.RESET + ChatColor.GREEN + " blocks per second!");
+							sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 						}
 					} else if (this.isStarted) {
 						sender.sendMessage(ChatColor.RED + "Random Falling Blocks is already started!");
+						sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 					}
 				} else if (args[0].equalsIgnoreCase("stop")) {
 					if (this.isStarted) {
@@ -65,18 +68,22 @@ public class RandomFallingBlocks extends JavaPlugin implements Listener {
 						if (this.task != null)
 							Bukkit.getScheduler().cancelTask(this.task.intValue());
 						sender.sendMessage(ChatColor.GREEN + "Random Falling Blocks stopped.");
+						sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 					} else if (!this.isStarted) {
 						sender.sendMessage(ChatColor.RED + "Random Falling Blocks not started!");
+						sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 					}
 				} else if ((!args[0].equalsIgnoreCase("start") || args.length == 2) && !args[0].equalsIgnoreCase("stop")) {
 					sender.sendMessage(ChatColor.RED + "Invalid Usage. Please try:");
 					sender.sendMessage(ChatColor.GREEN + "/blocks start <blocks per second>");
 					sender.sendMessage(ChatColor.GREEN + "/blocks stop");
+					sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 				}
 			} else if (args.length != 1 && args.length != 2) {
 				sender.sendMessage(ChatColor.RED + "Invalid Usage. Please try:");
 				sender.sendMessage(ChatColor.GREEN + "/blocks start <blocks per second>");
 				sender.sendMessage(ChatColor.GREEN + "/blocks stop");
+				sender.sendMessage(ChatColor.BLUE + "Plugin made by SkipTurn");
 			}
 			return true;
 		}
