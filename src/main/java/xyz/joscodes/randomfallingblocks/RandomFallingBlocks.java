@@ -17,9 +17,9 @@ import java.util.Random;
 
 public class RandomFallingBlocks extends JavaPlugin implements Listener {
 
-	public boolean isStarted;
+	private boolean isStarted;
 
-	public Integer task;
+	private Integer task;
 
 	private List<Material> blocks = new ArrayList<>();
 
